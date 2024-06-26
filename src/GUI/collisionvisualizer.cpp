@@ -31,7 +31,12 @@ void CollisionVisualizer::updateSimulation()
     float simt = dt/4.f;
     for(int i = 0; i < 4; i++)
     {
-
+        for(auto &ball : cs->vecCircles)
+        {
+            ball.simTimeRemaining = simt;
+        }
+        for(int j =0; j <maxSteps; j++)
+        {
         for(auto &ball : cs->vecCircles)
         {
             for(auto &target : cs->vecCircles)
@@ -44,14 +49,21 @@ void CollisionVisualizer::updateSimulation()
             }
         }
 
-        for(int b = 0; b<cs->vecCircles.size(); b++)
+        for(auto &ball : cs->vecCircles)
         {
-            cs->moveCircle(cs->vecCircles[b],simt);
+            cs->moveCircle(ball,simt);
+            float intendedSpeed = sqrtf(ball.velX * ball.velX + ball.velY * ball.velY);
+            float intendedDistance = intendedSpeed * ball.simTimeRemaining;
+            float actualDistance = sqrtf((ball.posX - ball.oldX)*(ball.posX - ball.oldX)+(ball.posY - ball.oldY)*(ball.posY-ball.oldY));
+            float actualTime = actualDistance / intendedSpeed;
+
+            ball.simTimeRemaining = ball.simTimeRemaining - actualTime;
         }
 
         for (auto &c : cs->vecCollidingCircles)
         {
             cs->handleCollision(c);
+        }
         }
     }
 

@@ -19,7 +19,9 @@ class Circle
     float accX;
     float accY;
 
-    float simElapsedTime;
+    float oldX;
+    float oldY;
+    float simTimeRemaining;
 
     Circle();
     Circle(float posX, float posY, float radius=50.f);

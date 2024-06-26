@@ -30,6 +30,7 @@ private:
     QBrush color1;
     CircleSimulator *cs;
     Circle *selectedCircle;
+    int maxSteps = 15;
 };
 
 #endif // COLLISIONVISUALIZER_H

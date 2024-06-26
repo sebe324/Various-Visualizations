@@ -70,7 +70,10 @@ vecCollidingCircles.erase(std::remove(vecCollidingCircles.begin(), vecCollidingC
 
 void CircleSimulator::moveCircle(Circle &c, float dt)
 {
+if(c.simTimeRemaining>0.0f){
 
+        c.oldX = c.posX;
+        c.oldY = c.oldY;
             c.accX = -c.velX*0.8f;
             c.accY = -c.velY*0.8f;
             c.velX += c.accX * dt;
@@ -88,6 +91,7 @@ void CircleSimulator::moveCircle(Circle &c, float dt)
                 c.velX = 0.f;
                 c.velY = 0.f;
             }
+}
 }
 
 float CircleSimulator::getAreaHeight()
