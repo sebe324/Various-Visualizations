@@ -3,15 +3,20 @@
 #include <QPainter>
 #include <QDebug>
 CollisionVisualizer::CollisionVisualizer(QWidget *parent)
-: QWidget(parent)
+    : QWidget(parent)
 {
     color1 = Qt::white;
+    cs = new CircleSimulator(800.f,800.f);
+    cs->addCircle(100.f,100.f,50.f);
+    cs->addCircle(50.f,300.f,50.f);
+    cs->addCircle(200.f,100.f,50.f);
+
     update();
 }
 
 CollisionVisualizer::~CollisionVisualizer()
 {
-
+    delete cs;
 }
 
 void CollisionVisualizer::paintEvent(QPaintEvent *event)
@@ -23,6 +28,11 @@ void CollisionVisualizer::paintEvent(QPaintEvent *event)
     painter.setBrush(color1);
     painter.setPen(Qt::PenStyle::NoPen);
     painter.drawRect(100, 100,100,100);
+    for(auto &c: cs->vecCircles)
+    {
+        QPointF center(c.posX,c.posY);
+        painter.drawEllipse(center,c.getRadius(),c.getRadius());
+    }
 
 
 }

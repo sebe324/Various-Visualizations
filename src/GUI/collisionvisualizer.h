@@ -3,6 +3,7 @@
 
 #include <QPainter>
 #include <QWidget>
+#include "../Collisions/CircleSimulator.h"
 
 class CollisionVisualizer : public QWidget
 {
@@ -22,6 +23,7 @@ protected:
 private:
     QTimer *timer;
     QBrush color1;
+    CircleSimulator *cs;
 };
 
 #endif // COLLISIONVISUALIZER_H
