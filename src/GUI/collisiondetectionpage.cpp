@@ -8,6 +8,9 @@ CollisionDetectionPage::CollisionDetectionPage(QStackedWidget *pages, QWidget *p
     ui->setupUi(this);
 
     auto *toMenuButton = ui->toMenuButton;
+    auto *idk = new QVBoxLayout(ui->customwidget);
+    visualizer = new CollisionVisualizer();
+    idk->addWidget(this->visualizer);
 
     connect(toMenuButton, &QPushButton::clicked, [this,pages]{
 

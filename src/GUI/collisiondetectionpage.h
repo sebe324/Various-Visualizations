@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QStackedWidget>
+#include "collisionvisualizer.h"
 
 namespace Ui {
 class CollisionDetectionPage;
@@ -18,6 +19,7 @@ public:
 
 private:
     Ui::CollisionDetectionPage *ui;
+    CollisionVisualizer *visualizer;
 };
 
 #endif // COLLISIONDETECTIONPAGE_H
