@@ -47,3 +47,10 @@ CMakeCache.txt
 *.user
 *.sln
 cmake_install.cmake
+
+
+*.ninja
+*.ninja_deps
+*.ninja_log
+*autogen
+*.qt
