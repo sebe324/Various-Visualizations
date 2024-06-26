@@ -1,7 +1,6 @@
 #include "CircleSimulator.h"
 #include <cmath>
 #include <algorithm>
-
 CircleSimulator::CircleSimulator(float w, float h, unsigned int circleAmount)
 {
     areaWidth = w;

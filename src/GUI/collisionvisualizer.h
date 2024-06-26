@@ -15,15 +15,21 @@ public:
     CollisionVisualizer(QWidget *parent = nullptr);
     ~CollisionVisualizer();
 
+public slots:
+    void updateSimulation();
+    void startSimulation();
+    void stopSimulation();
 protected:
     void paintEvent(QPaintEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;
     void mousePressEvent (QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 private:
     QTimer *timer;
     QBrush color1;
     CircleSimulator *cs;
+    Circle *selectedCircle;
 };
 
 #endif // COLLISIONVISUALIZER_H
