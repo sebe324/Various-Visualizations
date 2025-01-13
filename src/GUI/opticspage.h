@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QStackedWidget>
+#include <QTimer>
+#include "opticsvisualizer.h"
 namespace Ui {
 class OpticsPage;
 }
@@ -14,9 +16,11 @@ class OpticsPage : public QWidget
 public:
     explicit OpticsPage(QStackedWidget *pages, QWidget *parent = nullptr);
     ~OpticsPage();
-
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
 private:
     Ui::OpticsPage *ui;
+    OpticsVisualizer *visualizer;
 };
 
 #endif // OPTICSPAGE_H

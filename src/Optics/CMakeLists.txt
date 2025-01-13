@@ -5,7 +5,9 @@ file(GLOB OPTICS_SRC
      "*.cpp"
 )
 
-add_library(optics ${OPTICS_SRC})
+add_library(optics ${OPTICS_SRC}
+    OpticsSimulator.h
+    OpticsSimulator.cpp)
 
 add_dependencies(optics utilities)
 
