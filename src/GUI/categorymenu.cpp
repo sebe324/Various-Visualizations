@@ -13,6 +13,7 @@ CategoryMenu::CategoryMenu(QStackedWidget *pages, QWidget *parent)
     auto *sortingButton = ui->sortingButton;
     auto *collisionButton = ui->collisionButton;
     auto *mainmenuButton = ui->MenuButton;
+    auto *opticsButton = ui->opticsButton;
     connect(sortingButton, &QPushButton::clicked, [this, pages, parent]{
         this->sortPage = new SortPage(pages,parent);
         pages->addWidget(this->sortPage);
@@ -30,6 +31,11 @@ CategoryMenu::CategoryMenu(QStackedWidget *pages, QWidget *parent)
         pages->removeWidget(this);
         pages->setCurrentIndex(0);
         delete this;
+    });
+    connect(opticsButton, &QPushButton::clicked,[this,pages,parent]{
+        this->opticsPage = new OpticsPage(pages,parent);
+        pages->addWidget(this->opticsPage);
+        pages->setCurrentIndex(2);
     });
 }
 

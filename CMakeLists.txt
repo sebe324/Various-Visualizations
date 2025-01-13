@@ -21,6 +21,7 @@ add_subdirectory(src/Sorters)
 add_subdirectory(src/GUI)
 add_subdirectory(src/Utilities)
 add_subdirectory(src/Collisions)
+add_subdirectory(src/Optics)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Various-Visualizations
@@ -75,4 +76,5 @@ endif()
 target_link_libraries(Various-Visualizations PRIVATE utilities)
 target_link_libraries(Various-Visualizations PRIVATE sorters)
 target_link_libraries(Various-Visualizations PRIVATE collisions)
+target_link_libraries(Various-Visualizations PRIVATE optics)
 target_link_libraries(Various-Visualizations PRIVATE gui)

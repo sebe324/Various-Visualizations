@@ -17,6 +17,7 @@ target_link_libraries(gui PUBLIC
                      sorters
                      utilities
                      collisions
+                     optics
 )
 
 

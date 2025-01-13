@@ -130,9 +130,9 @@ color:white;
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="opticsButton">
              <property name="text">
-              <string>PushButton</string>
+              <string>Optics</string>
              </property>
             </widget>
            </item>

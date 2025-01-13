@@ -6,7 +6,7 @@
 #include "sortpage.h"
 #include "pathfindingpage.h"
 #include "collisiondetectionpage.h"
-
+#include "opticspage.h"
 namespace Ui {
 class CategoryMenu;
 }
@@ -22,6 +22,7 @@ public:
     SortPage *sortPage;
     PathfindingPage *pathFindingPage;
     CollisionDetectionPage *collisionDetectionPage;
+    OpticsPage *opticsPage;
 
 private:
     Ui::CategoryMenu *ui;

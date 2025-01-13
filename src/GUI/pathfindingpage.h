@@ -2,7 +2,7 @@
 #define PATHFINDINGPAGE_H
 
 #include <QWidget>
-
+#include <QStackedWidget>
 namespace Ui {
 class PathfindingPage;
 }
