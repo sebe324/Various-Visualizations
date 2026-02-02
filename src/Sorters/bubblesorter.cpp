@@ -17,12 +17,18 @@ void BubbleSorter::sortStep()
         *compared2=i+1;
         if (values->at(i) > values->at(i + 1)) {
             std::swap(values->at(i), values->at(i + 1));
+            changed = true;
         }
         i++;
     }
     else{
-        i=0;
-        j++;
+        if(!changed) {
+            timer->stop();
+        } else {
+            i=0;
+            j++;
+            changed = false;
+        }
     }
 }
 
