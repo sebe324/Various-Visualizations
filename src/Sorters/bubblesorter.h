@@ -12,6 +12,7 @@ public:
 private:
     int i;
     int j;
+    bool changed = false;
 };
 
 #endif // BUBBLESORTER_H
